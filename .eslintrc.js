@@ -19,8 +19,11 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'import/no-unresolved': 'off',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/jsx-filename-extension': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/prop-types': 'off',
   },
 };
