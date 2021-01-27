@@ -38,6 +38,7 @@
       "wrong": "#EA8282",
       "success": "#60BF88"
     },
-    "borderRadius": "12px"
+    "normalBorderRadius": "12px",
+    "largerBorderRadius": "24px"
   }
 }
