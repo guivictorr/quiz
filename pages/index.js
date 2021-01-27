@@ -19,7 +19,13 @@ const Home = () => {
           <h1>COUNTRY QUIZ</h1>
         </Widget.Header>
         <Widget>
-          <h1>Kuala Lumpur is the capital of</h1>
+          <h1>Um titulo legal</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            porro atque quas recusandae enim iusto. Aperiam recusandae saepe,
+            est autem id excepturi odit nostrum nulla velit voluptates commodi
+            reiciendis repudiandae.
+          </p>
         </Widget>
       </QuizContainer>
     </QuizBackground>
