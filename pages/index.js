@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import QuizBackground from '../src/components/QuizBackground';
@@ -6,15 +5,8 @@ import Widget from '../src/components/Widget';
 import Button from '../src/components/Button';
 import Input from '../src/components/Input';
 import Error from '../src/components/Error';
+import QuizContainer from '../src/components/QuizContainer';
 import { bg } from '../db.json';
-
-const QuizContainer = styled.main`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-`;
 
 const Home = () => {
   const [playerName, setPlayerName] = useState();
