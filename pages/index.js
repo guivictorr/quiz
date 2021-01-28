@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import QuizBackground from '../src/components/QuizBackground';
 import Widget from '../src/components/Widget';
+import Button from '../src/components/Button';
+import Input from '../src/components/Input';
 import { bg } from '../db.json';
 
 const QuizContainer = styled.main`
@@ -9,35 +11,6 @@ const QuizContainer = styled.main`
   justify-content: center;
   flex-direction: column;
   height: 100vh;
-`;
-
-const Input = styled.input`
-  align-self: center;
-  width: 100%;
-  border: 2px solid ${({ theme }) => theme.colors.secondary};
-  opacity: 0.8;
-  border-radius: ${({ theme }) => theme.normalBorderRadius};
-  padding: 15px 20px;
-  font-size: 18px;
-  color: ${({ theme }) => theme.colors.secondary};
-`;
-
-const Button = styled.button`
-  border-radius: ${({ theme }) => theme.normalBorderRadius};
-  background: ${({ theme }) => theme.colors.hover};
-  border: none;
-  padding: 15px 36px;
-  color: ${({ theme }) => theme.colors.contrastText};
-  font-weight: bold;
-  font-size: 18px;
-  box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
-  margin-top: 20px;
-  width: 100%;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  &:hover {
-    transform: scale(0.95);
-  }
 `;
 
 const Home = () => {
