@@ -6,6 +6,8 @@ const Widget = styled.div`
   border-radius: ${({ theme }) => theme.largerBorderRadius};
   width: 464px;
   height: auto;
+  display: flex;
+  flex-direction: column;
 
   h1,
   h2,
