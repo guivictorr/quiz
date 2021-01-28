@@ -10,6 +10,11 @@ const Quiz = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const question = questions[questionIndex];
 
+  const handleQuestionSubmit = () => {
+    if (questionIndex < totalQuestions) {
+      setQuestionIndex(questionIndex + 1);
+    }
+  };
   return (
     <QuizBackground backgroundImage={bg}>
       <QuizContainer>
@@ -17,11 +22,18 @@ const Quiz = () => {
           <h1>COUNTRY QUIZ</h1>
         </Widget.Header>
         <Widget>
-          <QuestionWidget
-            question={question}
-            totalQuestions={totalQuestions}
-            questionIndex={questionIndex}
-          />
+          {questionIndex < totalQuestions ? (
+            <QuestionWidget
+              question={question}
+              totalQuestions={totalQuestions}
+              questionIndex={questionIndex}
+              onSubmit={handleQuestionSubmit}
+            />
+          ) : (
+            <>
+              <h1>Tela de resultado</h1>
+            </>
+          )}
         </Widget>
       </QuizContainer>
     </QuizBackground>
