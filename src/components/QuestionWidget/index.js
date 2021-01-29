@@ -5,6 +5,7 @@ const QuestionWidget = ({
   totalQuestions,
   question,
   onSubmit,
+  isQuestionSubmited,
 }) => {
   return (
     <>
@@ -12,7 +13,11 @@ const QuestionWidget = ({
       <h1>{question.title}</h1>
       <p>{question.description}</p>
       {question.alternatives.map((item, index) => (
-        <Alternative onClick={() => onSubmit(index)} key={item}>
+        <Alternative
+          disabled={isQuestionSubmited}
+          onClick={() => onSubmit(index)}
+          key={item}
+        >
           {item}
         </Alternative>
       ))}

@@ -45,6 +45,7 @@ const Quiz = () => {
               totalQuestions={totalQuestions}
               questionIndex={questionIndex}
               onSubmit={handleQuestionSubmit}
+              isQuestionSubmited={isQuestionSubmited}
             />
           ) : (
             <ResultWidget score={score} />

@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import Confetti from 'react-confetti';
 
 const ResultWidgetContainer = styled.div`
   display: flex;
@@ -46,17 +47,24 @@ const ResultWidget = ({ score }) => {
   } = useRouter();
 
   return (
-    <ResultWidgetContainer>
-      <h1>Resultado</h1>
-      <p>
-        {`${name} você acertou `}
-        <strong>{` ${score} `}</strong>
-        questões
-      </p>
-      <button onClick={() => back()} type="button">
-        Tentar novamente
-      </button>
-    </ResultWidgetContainer>
+    <>
+      <Confetti
+        width={window.innerWidth}
+        height={window.innerHeight}
+        recycle={false}
+      />
+      <ResultWidgetContainer>
+        <h1>Resultado</h1>
+        <p>
+          {`${name} você acertou `}
+          <strong>{` ${score} `}</strong>
+          questões
+        </p>
+        <button onClick={() => back()} type="button">
+          Tentar novamente
+        </button>
+      </ResultWidgetContainer>
+    </>
   );
 };
 
