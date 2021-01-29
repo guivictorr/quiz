@@ -6,15 +6,31 @@ import { bg, questions } from '../db.json';
 import QuestionWidget from '../src/components/QuestionWidget';
 
 const Quiz = () => {
-  const totalQuestions = questions.length;
+  const [isQuestionSubmited, setIsQuestionSubmited] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [isCorrect, setIsCorrect] = useState(undefined);
+  const totalQuestions = questions.length;
   const question = questions[questionIndex];
 
-  const handleQuestionSubmit = () => {
+  const handleQuestionSubmit = index => {
+    setIsQuestionSubmited(true);
+    const { answer } = question;
+
+    if (index === answer) {
+      setIsCorrect(true);
+      setScore(score + 1);
+    }
+
     if (questionIndex < totalQuestions) {
-      setQuestionIndex(questionIndex + 1);
+      setTimeout(() => {
+        setQuestionIndex(questionIndex + 1);
+        setIsQuestionSubmited(false);
+        setIsCorrect(undefined);
+      }, 2000);
     }
   };
+
   return (
     <QuizBackground backgroundImage={bg}>
       <QuizContainer>
@@ -31,9 +47,14 @@ const Quiz = () => {
             />
           ) : (
             <>
-              <h1>Tela de resultado</h1>
+              <h1>
+                Você acertou
+                {score}
+              </h1>
             </>
           )}
+          {isQuestionSubmited && isCorrect && <p>Você acertou</p>}
+          {isQuestionSubmited && !isCorrect && <p>Você errou</p>}
         </Widget>
       </QuizContainer>
     </QuizBackground>
