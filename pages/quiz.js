@@ -2,8 +2,9 @@ import { useState } from 'react';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import Widget from '../src/components/Widget';
-import { bg, questions } from '../db.json';
 import QuestionWidget from '../src/components/QuestionWidget';
+import ResultWidget from '../src/components/ResultWidget';
+import { bg, questions } from '../db.json';
 
 const Quiz = () => {
   const [isQuestionSubmited, setIsQuestionSubmited] = useState(false);
@@ -46,12 +47,7 @@ const Quiz = () => {
               onSubmit={handleQuestionSubmit}
             />
           ) : (
-            <>
-              <h1>
-                Você acertou
-                {score}
-              </h1>
-            </>
+            <ResultWidget score={score} />
           )}
           {isQuestionSubmited && isCorrect && <p>Você acertou</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou</p>}
