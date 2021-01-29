@@ -6,7 +6,7 @@ import Button from '../src/components/Button';
 import Input from '../src/components/Input';
 import Error from '../src/components/Error';
 import QuizContainer from '../src/components/QuizContainer';
-import { bg } from '../db.json';
+import { bg, title } from '../db.json';
 
 const Home = () => {
   const [playerName, setPlayerName] = useState();
@@ -34,7 +34,7 @@ const Home = () => {
     <QuizBackground backgroundImage={bg}>
       <QuizContainer>
         <Widget.Header>
-          <h1>COUNTRY QUIZ</h1>
+          <h1>{title}</h1>
         </Widget.Header>
         <Widget>
           <h1>Deixe-me te conhecer melhor, qual seu nome ?</h1>

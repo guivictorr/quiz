@@ -4,7 +4,7 @@ import QuizContainer from '../src/components/QuizContainer';
 import Widget from '../src/components/Widget';
 import QuestionWidget from '../src/components/QuestionWidget';
 import ResultWidget from '../src/components/ResultWidget';
-import { bg, questions } from '../db.json';
+import { bg, questions, title } from '../db.json';
 
 const Quiz = () => {
   const [isQuestionSubmited, setIsQuestionSubmited] = useState(false);
@@ -36,7 +36,7 @@ const Quiz = () => {
     <QuizBackground backgroundImage={bg}>
       <QuizContainer>
         <Widget.Header>
-          <h1>COUNTRY QUIZ</h1>
+          <h1>{title}</h1>
         </Widget.Header>
         <Widget>
           {questionIndex < totalQuestions ? (

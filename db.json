@@ -1,28 +1,54 @@
 {
   "bg": "https://i.imgur.com/8Ozq1sU.png",
-  "title": "Quiz CSS da Alura",
+  "title": "CHESS QUIZ",
   "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "image": "https://images.unsplash.com/photo-1602968407815-5963b28c66af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "title": "Qual peça que anda em 'L'",
       "description": "Essa é pra aquecer",
       "answer": 2,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Torre",
+        "Bispo",
+        "Cavalo",
+        "Peão"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80",
+      "title": "Qual o objetivo do jogo de xadrez ?",
+      "description": "Ainda está fácil",
+      "answer": 3,
+      "alternatives": [
+        "Capturar o Rei",
+        "Capturar todos os peões",
+        "Comer todas as peças do adversário",
+        "Deixar o rei do oponente sem movimentos válidos e em xeque"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1529699263800-6030cf843dc1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80",
+      "title": "Quantas casas tem um tabuleiro de xadrez ?",
+      "description": "Boa sorte contando",
+      "answer": 1,
+      "alternatives": [
+        "68",
+        "64",
+        "32",
+        "72"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1582925250462-d012a22ef727?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80",
+      "title": "Qual peça pode realizar o movimento 'En passant' ?",
+      "description": "É aquele lá",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+        "O Peão",
+        "O Bispo",
+        "O Rei",
+        "A Dama"
       ]
     }
   ],
