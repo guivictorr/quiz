@@ -1,5 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Head from 'next/head';
+import { AnimatePresence } from 'framer-motion';
 import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
@@ -38,10 +39,12 @@ export default function App({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <AnimatePresence exitBeforeEnter>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </AnimatePresence>
     </>
   );
 }

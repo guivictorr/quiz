@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import Widget from '../src/components/Widget';
 import QuestionWidget from '../src/components/QuestionWidget';
 import ResultWidget from '../src/components/ResultWidget';
 import { bg, questions } from '../db.json';
+import animations from '../src/animations';
 
 const Quiz = () => {
   const [isQuestionSubmited, setIsQuestionSubmited] = useState(false);
@@ -34,7 +36,12 @@ const Quiz = () => {
 
   return (
     <QuizBackground backgroundImage={bg}>
-      <QuizContainer>
+      <QuizContainer
+        as={motion.div}
+        variants={animations.slideFromBottom}
+        initial="initial"
+        animate="final"
+      >
         <Widget>
           {questionIndex < totalQuestions ? (
             <QuestionWidget

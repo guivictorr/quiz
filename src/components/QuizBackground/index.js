@@ -6,6 +6,9 @@ const QuizBackground = styled.div`
   background-position: center;
   background-image: url(${({ backgroundImage }) => backgroundImage});
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 500px) {
     overflow: hidden;
