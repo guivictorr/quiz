@@ -33,9 +33,6 @@ const Home = () => {
   return (
     <QuizBackground backgroundImage={bg}>
       <QuizContainer>
-        <Widget.Header>
-          <h1>{title}</h1>
-        </Widget.Header>
         <Widget>
           <h1>Deixe-me te conhecer melhor, qual seu nome ?</h1>
           <form onSubmit={handleOnSubmit}>
