@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const WidgetContainer = styled.div`
@@ -16,12 +17,11 @@ const WidgetContainer = styled.div`
   }
 `;
 
-WidgetContainer.Content = styled.div`
+WidgetContainer.Content = styled(motion.div)`
   background-color: ${({ theme }) => theme.colors.contrastText};
   padding: 32px;
   border-radius: ${({ theme }) => theme.largerBorderRadius};
   width: 464px;
-  height: auto;
   display: flex;
   flex-direction: column;
 

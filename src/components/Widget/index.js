@@ -1,5 +1,6 @@
 import WidgetContainer from './styles';
 import { title } from '../../../db.json';
+import animations from '../../animations/index';
 
 const Widget = ({ children }) => {
   return (
@@ -7,7 +8,9 @@ const Widget = ({ children }) => {
       <header>
         <h1>{title}</h1>
       </header>
-      <WidgetContainer.Content>{children}</WidgetContainer.Content>
+      <WidgetContainer.Content variants={animations.widgetAnimation}>
+        {children}
+      </WidgetContainer.Content>
     </WidgetContainer>
   );
 };
