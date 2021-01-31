@@ -3,12 +3,12 @@ import { title } from '../../../db.json';
 
 const Widget = ({ children }) => {
   return (
-    <>
-      <WidgetContainer.Header>
+    <WidgetContainer>
+      <header>
         <h1>{title}</h1>
-      </WidgetContainer.Header>
-      <WidgetContainer>{children}</WidgetContainer>
-    </>
+      </header>
+      <div>{children}</div>
+    </WidgetContainer>
   );
 };
 
