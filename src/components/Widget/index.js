@@ -7,7 +7,7 @@ const Widget = ({ children }) => {
       <header>
         <h1>{title}</h1>
       </header>
-      <div>{children}</div>
+      <WidgetContainer.Content>{children}</WidgetContainer.Content>
     </WidgetContainer>
   );
 };
