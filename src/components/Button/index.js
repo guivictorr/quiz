@@ -16,6 +16,9 @@ const Button = styled.button`
   &:hover {
     transform: scale(0.95);
   }
+  &:disabled {
+    background-color: grey;
+  }
 `;
 
 export default Button;

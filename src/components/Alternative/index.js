@@ -1,24 +1,30 @@
-import styled from 'styled-components';
+import AlternativeContainer from './styles';
 
-const Alternative = styled.button`
-  border: 2px solid ${({ theme }) => theme.colors.secondary};
-  border-radius: ${({ theme }) => theme.normalBorderRadius};
-  padding: 15px 20px;
-  background: transparent;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.secondary};
-  font-size: 18px;
-  transition: all 0.4s ease;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.hover};
-    border-color: ${({ theme }) => theme.colors.hover};
-    color: ${({ theme }) => theme.colors.contrastText};
-  }
-
-  & + button {
-    margin-top: 20px;
-  }
-`;
+const Alternative = ({
+  key,
+  alternative,
+  alternativeIndex,
+  onChange,
+  questionId,
+  isSelected,
+  isQuestionSubmited,
+  alternativeStatus,
+}) => {
+  return (
+    <AlternativeContainer
+      htmlFor={key}
+      data-selected={isSelected}
+      data-status={isQuestionSubmited && alternativeStatus}
+    >
+      <input
+        onChange={() => onChange(alternativeIndex)}
+        name={questionId}
+        id={key}
+        type="radio"
+      />
+      <p>{alternative}</p>
+    </AlternativeContainer>
+  );
+};
 
 export default Alternative;

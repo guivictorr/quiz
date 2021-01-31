@@ -9,28 +9,28 @@ import { bg, questions } from '../db.json';
 import animations from '../src/animations';
 
 const Quiz = () => {
-  const [isQuestionSubmited, setIsQuestionSubmited] = useState(false);
+  const screenStates = {
+    QUIZ: 'QUIZ',
+    RESULT: 'RESULT',
+  };
+
   const [questionIndex, setQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [isCorrect, setIsCorrect] = useState(undefined);
+  const [screenState, setScreenState] = useState(screenStates.QUIZ);
   const totalQuestions = questions.length;
   const question = questions[questionIndex];
 
-  const handleQuestionSubmit = index => {
-    setIsQuestionSubmited(true);
-    const { answer } = question;
+  const handleAddScore = () => {
+    setScore(score + 1);
+  };
 
-    if (index === answer) {
-      setIsCorrect(true);
-      setScore(score + 1);
-    }
+  const handleNextQuestion = () => {
+    const nextQuestion = questionIndex + 1;
 
-    if (questionIndex < totalQuestions) {
-      setTimeout(() => {
-        setQuestionIndex(questionIndex + 1);
-        setIsQuestionSubmited(false);
-        setIsCorrect(undefined);
-      }, 2000);
+    if (nextQuestion < totalQuestions) {
+      setQuestionIndex(nextQuestion);
+    } else {
+      setScreenState(screenStates.RESULT);
     }
   };
 
@@ -43,19 +43,19 @@ const Quiz = () => {
         animate="final"
       >
         <Widget>
-          {questionIndex < totalQuestions ? (
+          {screenState === screenStates.QUIZ && (
             <QuestionWidget
               question={question}
               totalQuestions={totalQuestions}
               questionIndex={questionIndex}
-              onSubmit={handleQuestionSubmit}
-              isQuestionSubmited={isQuestionSubmited}
+              nextQuestion={handleNextQuestion}
+              addScore={handleAddScore}
             />
-          ) : (
+          )}
+
+          {screenState === screenStates.RESULT && (
             <ResultWidget score={score} />
           )}
-          {isQuestionSubmited && isCorrect && <p>Você acertou</p>}
-          {isQuestionSubmited && !isCorrect && <p>Você errou</p>}
         </Widget>
       </QuizContainer>
     </QuizBackground>
