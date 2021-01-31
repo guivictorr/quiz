@@ -46,6 +46,7 @@ const QuestionWidget = ({
         return (
           <Alternative
             key={alternativeId}
+            id={alternativeId}
             alternative={item}
             onChange={setSelectedAlternative}
             alternativeIndex={index}

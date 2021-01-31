@@ -1,7 +1,7 @@
 import AlternativeContainer from './styles';
 
 const Alternative = ({
-  key,
+  id,
   alternative,
   alternativeIndex,
   onChange,
@@ -12,14 +12,14 @@ const Alternative = ({
 }) => {
   return (
     <AlternativeContainer
-      htmlFor={key}
+      htmlFor={id}
       data-selected={isSelected}
       data-status={isQuestionSubmited && alternativeStatus}
     >
       <input
         onChange={() => onChange(alternativeIndex)}
         name={questionId}
-        id={key}
+        id={id}
         type="radio"
       />
       <p>{alternative}</p>
