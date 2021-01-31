@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Confetti from 'react-confetti';
+import Winner from '../Winner';
 
 import ResultWidgetContainer from './styles';
 
@@ -17,6 +18,7 @@ const ResultWidget = ({ score }) => {
         recycle={false}
       />
       <ResultWidgetContainer>
+        <Winner />
         <strong>Resultado</strong>
         <p>
           {`${name} você acertou `}
