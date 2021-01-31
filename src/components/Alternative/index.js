@@ -22,7 +22,7 @@ const Alternative = ({
         id={id}
         type="radio"
       />
-      <p>{alternative}</p>
+      {alternative}
     </AlternativeContainer>
   );
 };
