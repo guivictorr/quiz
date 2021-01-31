@@ -9,10 +9,6 @@ const QuizBackground = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (max-width: 500px) {
-    overflow: hidden;
-  }
 `;
 
 export default QuizBackground;

@@ -25,6 +25,11 @@ WidgetContainer.Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 26px;
+  }
+
   h1,
   h2,
   h3 {
